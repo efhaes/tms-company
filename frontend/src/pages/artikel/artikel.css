@@ -1,0 +1,95 @@
+.artikel-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.artikel-page h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.artikel-page .subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.artikel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.artikel-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.artikel-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.artikel-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.artikel-card-body {
+  padding: 1rem 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.artikel-card time {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.artikel-card h2 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.artikel-card p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.artikel-card-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.artikel-card-footer .author {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.artikel-card-footer .read-more {
+  font-size: 0.75rem;
+  color: #3b82f6;
+}

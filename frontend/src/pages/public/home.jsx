@@ -105,6 +105,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4.5 Jenis Pajak */}
+      <section className="bg-gray-50 py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Jenis Pajak</h2>
+          <p className="text-center text-gray-600 mb-8">Informasi lengkap mengenai berbagai jenis pajak yang perlu Anda ketahui</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {[
+              { name: 'PPh 21', desc: 'Pajak penghasilan pegawai' },
+              { name: 'PPh 22', desc: 'Pajak pemotongan impor' },
+              { name: 'PPh 23', desc: 'Pajak atas jasa' },
+              { name: 'PPh 25', desc: 'Pajak penghasilan badan' },
+              { name: 'PPh 26', desc: 'Pajak dividen luar negeri' },
+              { name: 'PPh 29', desc: 'Pajak atas royalti' },
+              { name: 'PPh 4 (2)', desc: 'Pajak final konstruksi' },
+              { name: 'PPh UMKM', desc: 'Pajak usaha mikro kecil' }
+            ].map((item, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold text-[#042C53] mb-2">{item.name}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link to="/artikel" className="text-[#042C53] font-semibold hover:underline">
+              Lebih lanjut →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* 5. Mengapa Memilih Kami */}
       <section className="bg-gray-50 py-16 px-4">
         <div className="container mx-auto">

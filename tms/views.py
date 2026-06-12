@@ -13,7 +13,8 @@ from .models import (
 
 from .serializers import (
     LayananSerializer,
-    ArtikelSerializer,
+    ArtikelListSerializer,
+    ArtikelDetailSerializer,
     PesanKontakSerializer,
     FiturLayananSerializer
 )
@@ -53,14 +54,12 @@ class FiturLayananViewSet(viewsets.ModelViewSet):
 
 class ArtikelViewSet(viewsets.ModelViewSet):
     queryset = Artikel.objects.all()
-    serializer_class = ArtikelSerializer
     lookup_field = 'slug'
 
-    def get_permissions(self):
-        if self.action in ['list', 'retrieve']:
-            return [AllowAny()]
-
-        return [IsAuthenticated()]
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return ArtikelDetailSerializer
+        return ArtikelListSerializer
 
 
 class PesanKontakCreateView(generics.CreateAPIView):

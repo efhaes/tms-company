@@ -35,7 +35,12 @@ class LayananSerializer(serializers.ModelSerializer):
         ]
 
 
-class ArtikelSerializer(serializers.ModelSerializer):
+class ArtikelListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Artikel
+        fields = ['id', 'judul', 'slug', 'ringkasan', 'tanggal', 'thumbnail']
+
+class ArtikelDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artikel
         fields = '__all__'

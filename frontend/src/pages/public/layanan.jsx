@@ -91,7 +91,66 @@ export default function Layanan() {
       <div className="container mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">Layanan Kami</h2>
         <p className="text-center text-gray-600 mb-8">Pilih layanan yang sesuai dengan kebutuhan Anda</p>
-        
+
+        {/* Category Descriptions */}
+        {selectedKategori === 'perpajakan' && (
+          <div className="bg-blue-50 border-l-4 border-[#042C53] p-6 rounded-r-lg mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Layanan Perpajakan</h3>
+            <p className="text-gray-600 mb-4">Layanan perpajakan terpadu yang memastikan bisnis Anda aman, teratur, dan berjalan sesuai regulasi</p>
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">Konsultasi Perpajakan Profesional untuk Semua Jenis Bisnis</h4>
+              <p className="text-gray-600 text-sm mb-4">
+                Kami menyediakan layanan konsultasi perpajakan yang komprehensif untuk membantu bisnis Anda mengelola kewajiban pajak secara efisien dan sesuai dengan peraturan perpajakan Indonesia yang berlaku.
+              </p>
+              <p className="text-gray-600 text-sm mb-4">
+                Tim konsultan pajak bersertifikat kami memiliki pengalaman lebih dari 15 tahun dalam menangani berbagai kasus perpajakan, mulai dari perencanaan pajak, pelaporan SPT, tax review, hingga pendampingan pemeriksaan dan penyelesaian sengketa pajak.
+              </p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>✓ Telah melayani 100+ klien dari berbagai industri</li>
+                <li>✓ Tim konsultan bersertifikat dan berpengalaman</li>
+                <li>✓ Melayani UMKM, perusahaan menengah, hingga korporasi besar</li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {selectedKategori === 'akuntansi' && (
+          <div className="bg-blue-50 border-l-4 border-[#042C53] p-6 rounded-r-lg mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Layanan Akuntansi</h3>
+            <p className="text-gray-600 mb-4">Pembukuan dan akuntansi yang tertata, transparan, dan siap mendukung strategi pertumbuhan jangka panjang bisnis Anda.</p>
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">Layanan Akuntansi dan Pembukuan Profesional</h4>
+              <p className="text-gray-600 text-sm mb-4">
+                Kami menyediakan layanan akuntansi dan pembukuan yang lengkap untuk membantu bisnis Anda mengelola keuangan dengan lebih baik dan transparan. Dari pencatatan transaksi harian hingga penyusunan laporan keuangan audit, tim akuntan profesional kami siap memberikan solusi terbaik.
+              </p>
+              <p className="text-gray-600 text-sm mb-4">
+                Dengan pengalaman menangani berbagai skala bisnis dari UMKM hingga perusahaan besar, kami memahami kebutuhan akuntansi yang berbeda-beda dan menyediakan layanan yang disesuaikan dengan standar akuntansi Indonesia (SAK) dan kebutuhan spesifik bisnis Anda.
+              </p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li>✓ Akuntan profesional bersertifikat dan berpengalaman</li>
+                <li>✓ Laporan keuangan sesuai standar akuntansi (SAK)</li>
+                <li>✓ Software akuntansi modern dan sistem pelaporan real-time</li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {selectedKategori === 'lainnya' && (
+          <div className="bg-blue-50 border-l-4 border-[#042C53] p-6 rounded-r-lg mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-2">Layanan Administratif & Legalitas</h3>
+            <p className="text-gray-600 mb-4">Solusi bisnis komprehensif untuk kebutuhan administrasi dan legalitas perusahaan Anda</p>
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-semibold mb-2">Konsultasi Administratif dan Legalitas Profesional untuk Semua Jenis Bisnis</h4>
+              <p className="text-gray-600 text-sm mb-4">
+                Kami menyediakan layanan pendukung bisnis seperti penyusunan SOP untuk memastikan alur kerja lebih terstruktur, serta Assistance Tax Document (ATD) yang membantu pengelolaan dokumen perpajakan agar tetap rapi dan sesuai ketentuan. Layanan ini dirancang untuk meningkatkan efisiensi operasional dan meminimalkan risiko administratif.
+              </p>
+              <p className="text-gray-600 text-sm mb-4">
+                Kami juga menawarkan Financial Due Diligence (FDD) guna menilai kesehatan finansial perusahaan sebelum pengambilan keputusan strategis, serta layanan Restructuring untuk menata ulang struktur bisnis agar lebih efisien dan siap berkembang. Dengan pendekatan profesional, kami mendukung bisnis Anda agar tetap kuat dan kompetitif.
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Kategori Filter */}
       <div className="flex gap-4 mb-8 flex-wrap">
         {kategoriList.map(kategori => (
