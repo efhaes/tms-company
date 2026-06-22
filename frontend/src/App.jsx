@@ -9,7 +9,7 @@ import Tentang  from './pages/public/tentang'
 import Artikel from './pages/public/artikel'
 import DetailArtikel from './pages/public/detail_artikel'
 import Login from './pages/admin/Login'
-import Dashboard from './pages/admin/Dashboard'
+import Dashboard from './pages/admin/dashboard'
 
 function PublicLayout({ children }) {
   return (

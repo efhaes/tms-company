@@ -3,7 +3,12 @@ from .models import (
     Layanan,
     FiturLayanan,
     Artikel,
-    PesanKontak
+    PesanKontak,
+    OrderLayanan,
+    TemplateWhatsApp,
+    ProfilPerusahaan,
+    PengaturanSEO,
+    OneDriveLoginURL
 )
 
 
@@ -66,4 +71,100 @@ class PesanKontakSerializer(serializers.ModelSerializer):
             'pesan',
             'created_at',
             'sudah_dibaca'
+        ]
+
+
+class OrderLayananSerializer(serializers.ModelSerializer):
+    layanan_nama = serializers.CharField(
+        source='layanan.nama',
+        read_only=True
+    )
+    
+    class Meta:
+        model = OrderLayanan
+        fields = [
+            'id',
+            'nama',
+            'email',
+            'nomor_wa',
+            'layanan',
+            'layanan_nama',
+            'pesan',
+            'status',
+            'created_at',
+            'updated_at'
+        ]
+
+
+class TemplateWhatsAppSerializer(serializers.ModelSerializer):
+    layanan_nama = serializers.CharField(
+        source='layanan.nama',
+        read_only=True
+    )
+    
+    class Meta:
+        model = TemplateWhatsApp
+        fields = [
+            'id',
+            'layanan',
+            'layanan_nama',
+            'nama_template',
+            'isi_template',
+            'aktif',
+            'created_at',
+            'updated_at'
+        ]
+
+
+class ProfilPerusahaanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProfilPerusahaan
+        fields = [
+            'id',
+            'nama_perusahaan',
+            'foto_perusahaan',
+            'foto_struktur_organisasi',
+            'deskripsi_singkat',
+            'alamat',
+            'email',
+            'telepon',
+            'nomor_wa',
+            'updated_at'
+        ]
+
+
+class PengaturanSEOSerializer(serializers.ModelSerializer):
+    layanan_nama = serializers.CharField(
+        source='layanan.nama',
+        read_only=True
+    )
+    
+    class Meta:
+        model = PengaturanSEO
+        fields = [
+            'id',
+            'layanan',
+            'layanan_nama',
+            'meta_title',
+            'meta_description',
+            'meta_keywords',
+            'canonical_url',
+            'og_title',
+            'og_description',
+            'og_image',
+            'updated_at'
+        ]
+
+
+class OneDriveLoginURLSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OneDriveLoginURL
+        fields = [
+            'id',
+            'nama',
+            'url',
+            'deskripsi',
+            'aktif',
+            'created_at',
+            'updated_at'
         ]
