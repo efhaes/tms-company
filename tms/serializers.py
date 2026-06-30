@@ -18,11 +18,27 @@ class FiturLayananSerializer(serializers.ModelSerializer):
         fields = ['id', 'nama']
 
 
+class PengaturanSEOSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PengaturanSEO
+        fields = [
+            'id',
+            'meta_title',
+            'meta_description',
+            'meta_keywords',
+            'canonical_url',
+            'og_title',
+            'og_description',
+            'og_image',
+            'updated_at'
+        ]
+
 class LayananSerializer(serializers.ModelSerializer):
     fitur = FiturLayananSerializer(
         many=True,
         read_only=True
     )
+    seo_settings = PengaturanSEOSerializer(read_only=True)
 
     class Meta:
         model = Layanan
@@ -36,7 +52,8 @@ class LayananSerializer(serializers.ModelSerializer):
             'kategori',
             'urutan',
             'aktif',
-            'fitur'
+            'fitur',
+            'seo_settings'
         ]
 
 
@@ -79,6 +96,7 @@ class OrderLayananSerializer(serializers.ModelSerializer):
         source='layanan.nama',
         read_only=True
     )
+    wa_message = serializers.CharField(read_only=True)
     
     class Meta:
         model = OrderLayanan
@@ -91,6 +109,7 @@ class OrderLayananSerializer(serializers.ModelSerializer):
             'layanan_nama',
             'pesan',
             'status',
+            'wa_message',
             'created_at',
             'updated_at'
         ]

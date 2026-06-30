@@ -142,7 +142,7 @@ export default function Kontak() {
                       href="mailto:marketing@trimastersolusindo.id"
                       className="text-[#185FA5]"
                     >
-                      marketing@trimastersolusindo.id
+                      entis@trimastersolusindo.id
                     </a>
                   </div>
                 </div>

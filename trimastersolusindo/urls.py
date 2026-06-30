@@ -20,9 +20,13 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf import settings
 from django.conf.urls.static import static
 
+from tms.views import robots_txt, sitemap_xml
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('tms.urls')),
     path('api/token/', TokenObtainPairView.as_view()),      # login → dapat token
     path('api/token/refresh/', TokenRefreshView.as_view()), # refresh token
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('robots.txt', robots_txt),
+    path('sitemap.xml', sitemap_xml),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

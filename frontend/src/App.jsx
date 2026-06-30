@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/public/home'
@@ -25,18 +26,20 @@ function PublicLayout({ children }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
-        <Route path="/layanan" element={<PublicLayout><Layanan /></PublicLayout>} />
-        <Route path="/layanan/:slug" element={<PublicLayout><DetailLayanan /></PublicLayout>} />
-        <Route path="/tentang" element={<PublicLayout><Tentang  /></PublicLayout>} />
-        <Route path="/artikel" element={<PublicLayout><Artikel /></PublicLayout>} />
-        <Route path="/artikel/:slug" element={<PublicLayout><DetailArtikel /></PublicLayout>} />
-        <Route path="/kontak" element={<PublicLayout><Kontak /></PublicLayout>} />
-      </Routes>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<PublicLayout><Home /></PublicLayout>} />
+          <Route path="/layanan" element={<PublicLayout><Layanan /></PublicLayout>} />
+          <Route path="/layanan/:slug" element={<PublicLayout><DetailLayanan /></PublicLayout>} />
+          <Route path="/tentang" element={<PublicLayout><Tentang  /></PublicLayout>} />
+          <Route path="/artikel" element={<PublicLayout><Artikel /></PublicLayout>} />
+          <Route path="/artikel/:slug" element={<PublicLayout><DetailArtikel /></PublicLayout>} />
+          <Route path="/kontak" element={<PublicLayout><Kontak /></PublicLayout>} />
+        </Routes>
+      </BrowserRouter>
+    </HelmetProvider>
   )
 }
