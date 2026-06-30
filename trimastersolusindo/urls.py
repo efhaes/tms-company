@@ -19,8 +19,15 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import JsonResponse
 
 from tms.views import robots_txt, sitemap_xml
+
+def api_root_view(request):
+    return JsonResponse({
+        "status": "online",
+        "message": "Welcome to TMS Company API. API endpoints are available at /api/"
+    })
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +36,5 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view()), # refresh token
     path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap_xml),
+    path('', api_root_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
